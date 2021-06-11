@@ -27,7 +27,7 @@ function setup() {
     lastFed=data.val();
   });
 
- 
+  //read game state from database
   readState=database.ref('gameState');
   readState.on("value",function(data){
     gameState=data.val();
@@ -75,7 +75,7 @@ function draw() {
   drawSprites();
 }
 
-
+//function to read food Stock
 function readStock(data){
   foodS=data.val();
   foodObj.updateFoodStock(foodS);
